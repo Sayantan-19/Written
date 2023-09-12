@@ -1,0 +1,20 @@
+<%- include("partials/header");-%>
+
+<h1>Home</h1>
+
+<p><%= Homestarting %> </p>
+
+    <!-- <% for (let i = 0 ; i< blogcontent.length ; i++ ){ %>
+      <P>  <%= console.log(blogcontent[i].title) %> </P>
+    <% } %> -->
+        
+    <% blogcontent.forEach(function(element) { %>
+     <h2> <%= element.title; %> </h2>
+     <p>
+         <%= element.content.substring(0, 100)+ "..."; %>
+         <a href="post/<%= element._id %>">Read More</a>
+     </p>
+    <% }); %>
+    
+
+<%- include("partials/footer"); -%>
